@@ -13,7 +13,6 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/product")
 public class ProductController {
 
     @Autowired
@@ -22,6 +21,10 @@ public class ProductController {
     @GetMapping("/list")
     public List<ProductInfo> list(@RequestParam Integer productStatus) {
         return productInfoDao.findAllByProductStatus(productStatus);
+    }
+    @GetMapping("/msg")
+    public String msg() {
+        return "Hello SpringCloud RestTemplate";
     }
 
 

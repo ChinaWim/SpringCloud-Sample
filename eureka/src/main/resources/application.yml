@@ -1,5 +1,14 @@
 # eureka有心跳检测、健康检查、负载均衡等功能
 
+
+# Ribbon
+# 客户端负载均衡器：Ribbon SpringCloud在结合Ribbon中封装了增加了HttpClient和OKHttp两种请求端实现
+# RestTemplate Feign Zuul 都是使用了Ribbon
+# 核心组件 ServerList ServerListFilter IRule
+
+
+
+
 eureka:
   client:
     #配置client注册的地址
