@@ -1,0 +1,10 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  #自定义eureka-server管理页面跳转的hostname
+  instance:
+    hostname: clientName
+spring:
+  application:
+    name: client

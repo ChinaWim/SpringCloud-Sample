@@ -1,0 +1,15 @@
+eureka:
+  client:
+    #配置client注册的地址
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    #本项目不注册到注册中心上
+    register-with-eureka: false
+  #关闭自我保护模式，此配置生产环境不建议关闭（默认开启
+  server:
+    enable-self-preservation: false
+spring:
+  application:
+    name: eureka
+server:
+  port: 8761
