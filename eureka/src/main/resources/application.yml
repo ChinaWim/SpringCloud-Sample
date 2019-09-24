@@ -1,8 +1,12 @@
+# eureka有心跳检测、健康检查、负载均衡等功能
+
 eureka:
   client:
     #配置client注册的地址
     service-url:
       defaultZone: http://localhost:8761/eureka
+      #高可用 3节点demo
+      #defaultZone: http://localhost:8762/eureka,http://localhost:8763/eureka
     #本项目不注册到注册中心上
     register-with-eureka: false
   #关闭自我保护模式，此配置生产环境不建议关闭（默认开启
@@ -11,5 +15,7 @@ eureka:
 spring:
   application:
     name: eureka
+
+#配置高用，要相互注册，（a b c 三台，a 注册地址写上b c的 eureka-server地址）
 server:
   port: 8761
