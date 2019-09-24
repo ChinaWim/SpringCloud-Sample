@@ -1,12 +1,16 @@
 package com.wim.order.controller;
 
 import com.wim.order.client.ProductClient;
+import com.wim.order.dto.ProductInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @RestController
 public class OderController {
@@ -38,4 +42,11 @@ public class OderController {
         //4.第四种方式 使用Feign
         return productClient.getProductMsg();
     }
+
+
+    @GetMapping("/getProductList")
+    public List<ProductInfo> getProductList(@RequestParam Integer productStatus) {
+        return productClient.getProductList(productStatus);
+    }
+
 }
